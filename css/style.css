@@ -10,16 +10,33 @@ body {
   font-weight: bold;
   font-style: normal;
 }
+@font-face {
+  font-family: "Somar";
+  src: url("fonts/Somar-Bold.woff2") format("woff2"),
+    url("fonts/Somar-Bold.woff") format("woff"),
+    url("fonts/Somar-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  font-family: "Somar", sans-serif;
+}
 
 header {
   font-family: "Tajawal", sans-serif;
   background: linear-gradient(to right, #e0e7ff, white, #d1fae5);
 }
-
 .navbar {
   background: linear-gradient(to right, #e0e7ff, white, #d1fae5);
   padding: 15px 20px;
   border-radius: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
 }
 
 .navbar-brand img {
@@ -30,6 +47,11 @@ header {
   color: #444;
   font-weight: bold;
   margin: 0 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #008bdc;
 }
 
 .nav-link.active {
@@ -44,22 +66,30 @@ header {
   display: flex;
   align-items: center;
   font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-support:hover {
+  background-color: #005a99;
 }
 
 .btn-support img {
   margin-left: 8px;
 }
 
+.nav-link.highlight {
+  color: #007bff !important;
+}
 .test {
   background-color: #2680eb14;
   border-color: transparent !important;
 }
 
-
 .header-section {
   text-align: center;
   border-radius: 20px;
   background: linear-gradient(to right, #e0e7ff, white, #d1fae5);
+  padding-top: 100px; /* لتجنب تغطية الشريط العلوي للمحتوى */
 }
 
 .header-section p img {
@@ -168,10 +198,6 @@ header {
   }
 }
 
-
-
-
-
 /* statas section */
 .stats {
   transition: all 0.3s ease;
@@ -219,9 +245,11 @@ header {
 
 .app {
   background: linear-gradient(
-      rgba(248, 249, 250, 0.532),
-      rgba(248, 249, 250, 0.604)
-    )}
+    rgba(248, 249, 250, 0.532),
+    rgba(248, 249, 250, 0.604)
+  );
+  overflow-x: hidden;
+}
 
 .stats:hover i {
   color: #008bdc;
@@ -241,6 +269,8 @@ header {
   transform: translateX(5px);
 }
 
+/* advantage section */
+
 .awordsApp .cup {
   color: #44d2a8;
   border: 3px solid transparent;
@@ -248,7 +278,40 @@ header {
   border-radius: 30%;
   padding: 10px;
 }
+
+.app2 {
+  position: relative;
+  /* لمنع تجاوز الدائرة للحواف */
+}
+
+.app2::before {
+  content: "";
+  position: absolute;
+  bottom: -100px; /* تحريك الدائرة لأعلى */
+  left: -600px; /* تحريكها لليسار */
+  width: 600px; /* حجم الدائرة */
+  height: 701px;
+  background: linear-gradient(
+    to left,
+    rgba(157, 126, 213, 1),
+    rgba(255, 255, 255, 0)
+  ); /* تدرج لوني */
+  border-radius: 50%;
+  filter: blur(120px); /* قيمة blur مشابهة للـ 119.55 */
+  opacity: 1;
+  filter: blur(120);
+  border-color: transparent;
+  z-index: -1; /* خلف المحتوى */
+}
+
 .awordsApp .calendar {
+  color: #44d2a8;
+  border: 3px solid transparent;
+  background-color: #44d2a817;
+  border-radius: 30%;
+  padding: 10px;
+}
+.awordsApp .bill {
   color: #44d2a8;
   border: 3px solid transparent;
   background-color: #44d2a817;
@@ -269,6 +332,13 @@ header {
   border-radius: 30%;
   padding: 10px;
 }
+.feature-box p {
+  color: #8a9cb2;
+  font-family: "Somar", sans-serif;
+}
+.feature-box h5 {
+  font-family: "Somar", sans-serif;
+}
 .awordsApp .cards {
   background-color: #ffffff;
 }
@@ -281,10 +351,6 @@ header {
 .cards {
   transition: all 0.3s ease;
 }
-
-
-
-
 
 /*! video-section */
 .video-section {
@@ -311,37 +377,63 @@ header {
   border-radius: 15px;
 }
 
-
 /* rewards-section  */
 .rewards-section {
   display: flex;
   justify-content: space-between;
-  gap: 20px; 
+  gap: 20px;
   padding: 50px 10px;
+}
+
+.reward {
+  position: relative;
+  background: linear-gradient(
+    rgba(248, 249, 250, 0.532),
+    rgba(248, 249, 250, 0.604)
+  ); /* لمنع تجاوز الدائرة للحواف */
+}
+
+.reward::before {
+  content: "";
+  position: absolute;
+  top: 150px; /* تحريك الدائرة لأعلى */
+  right: -300px; /* تحريكها لليسار */
+  width: 600px; /* حجم الدائرة */
+  height: 201px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 192, 66, 1),
+    rgba(255, 255, 255, 0)
+  ); /* تدرج لوني */
+  border-radius: 50%;
+  filter: blur(120px); /* قيمة blur مشابهة للـ 119.55 */
+  opacity: 1;
+  border-color: transparent;
+  z-index: 0; /* خلف المحتوى */
 }
 
 .image-container,
 .text-container {
   flex: 1;
-  min-width: 0; 
+  min-width: 0;
   color: white;
   border-radius: 15px;
-  height: 400px; 
+  height: 400px;
   position: relative;
-  display: flex; 
+  display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
 }
 
 .text-container {
   background: #0077b6;
-  margin-top: 60px; 
+  margin-top: 60px;
 }
 
 .image-container img {
-  width: 100%; 
+  width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
 }
 
 .text-container h3 {
@@ -371,10 +463,10 @@ header {
 .content {
   position: relative;
   z-index: 1;
-  flex-grow: 1; 
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: center;
 }
 
 @media (max-width: 768px) {
@@ -384,7 +476,7 @@ header {
   .image-container,
   .text-container {
     flex: 1 0 100%;
-    width: 100%; 
+    width: 100%;
     height: 350px;
     margin-top: 0;
   }
@@ -405,14 +497,14 @@ header {
 .slider-title {
   font-size: 2em;
   font-weight: bold;
-  color: #2c5282; 
+  color: #2c5282;
   margin-bottom: 10px;
-  font-family: "Arial", sans-serif; 
+  font-family: "Arial", sans-serif;
 }
 
 .slider-subtitle {
   font-size: 1em;
-  color: #718096; 
+  color: #718096;
   margin-bottom: 30px;
   line-height: 1.5;
 }
@@ -421,7 +513,7 @@ header {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 20px; 
+  gap: 20px;
 }
 
 .slider-logo {
@@ -470,11 +562,10 @@ header {
   }
 }
 
-
 /* ! downloadSection */
 
 .downloadSection {
-  background-color: #118AC9;
+  background-color: #118ac9;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -491,10 +582,9 @@ header {
 
 .sectionDownload img:first-child {
   position: absolute;
-bottom: -80%;
+  bottom: -80%;
   right: -43%;
   width: auto;
-
 }
 
 .foreground-img {
@@ -505,20 +595,17 @@ bottom: -80%;
 
 /* Responsive Fix */
 @media (max-width: 1200px) {
-  .sectionDownload
-  {
+  .sectionDownload {
     overflow-y: hidden;
   }
   .sectionDownload img:first-child {
     bottom: -20%;
-  right: -3%;
-  max-width: 100%;
-}
+    right: -3%;
+    max-width: 100%;
+  }
   .sectionDownload img:last-child {
-padding-top: 5%;
-}
-
-
+    padding-top: 5%;
+  }
 }
 @media (max-width: 992px) {
   .downloadSection {
@@ -572,333 +659,361 @@ padding-top: 5%;
   }
 }
 
-
-
-
-
 /*? others Apps  */
 .othersApp {
-    padding: 20px;
-    text-align: center;
+  padding: 20px;
+  text-align: center;
 }
 
 .main-title {
-    font-size: 2.5em;
-    color: #003366;
-    margin-bottom: 10px;
-    font-weight: bold;
+  font-size: 2.5em;
+  color: #003366;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .othersApp .subtitle {
-    color: #8A9CB2;
+  color: #8a9cb2;
 }
 
 .tile img {
-    width: 100%; 
+  width: 100%;
 }
 
 .tile {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s;
 }
 
 .tile:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
 .quran {
-    background-color: #e6f2ff;
+  background-color: #e6f2ff;
 }
 
 .hadith {
-    background-color: #e6ffe6;
+  background-color: #e6ffe6;
 }
 
 .terminology {
-    background-color: #fff5e6;
+  background-color: #fff5e6;
 }
 
 .kids {
-    background-color: #f2e6ff;
+  background-color: #f2e6ff;
 }
 
 /* Arrow icon colors */
 .hadith i {
-    background-color: #9DB4691C !important;
-    color: #9CB469 !important;
-    border-color: transparent !important;
+  background-color: #9db4691c !important;
+  color: #9cb469 !important;
+  border-color: transparent !important;
 }
 
 .quran i {
-    background-color: #2680EB14 !important;
-    color: #118AC9 !important;
-    border-color: transparent !important;
+  background-color: #2680eb14 !important;
+  color: #118ac9 !important;
+  border-color: transparent !important;
 }
 
 .kids i {
-    background-color: #2D30921C !important;
-    color: #2D3092 !important;
-    border-color: transparent !important;
+  background-color: #2d30921c !important;
+  color: #2d3092 !important;
+  border-color: transparent !important;
 }
 
 .terminology i {
-    background-color: #DAA36030 !important;
-    color: #DAA360 !important;
-    border-color: transparent !important;
+  background-color: #daa36030 !important;
+  color: #daa360 !important;
+  border-color: transparent !important;
 }
 
 .logo {
-    width: 100px;
-    height: 60px;
+  width: 100px;
+  height: 60px;
 }
 
 @media (max-width: 992px) {
-    .tile {
-        text-align: center;
-        padding: 15px;
-    }
+  .tile {
+    text-align: center;
+    padding: 15px;
+  }
 
-    .tile img {
-        margin-bottom: 10px;
-        max-width: 80%;
-    }
+  .tile img {
+    margin-bottom: 10px;
+    max-width: 80%;
+  }
 
-    .tile i {
-        margin-top: 10px;
-        padding: 15px;
-    }
+  .tile i {
+    margin-top: 10px;
+    padding: 15px;
+  }
 }
 
 @media (max-width: 768px) {
-    .main-title {
-        font-size: 2em;
-    }
+  .main-title {
+    font-size: 2em;
+  }
 
-    .subtitle {
-        font-size: 1em;
-    }
+  .subtitle {
+    font-size: 1em;
+  }
 
-    .tile {
-        padding: 12px;
-    }
+  .tile {
+    padding: 12px;
+  }
 
-    .tile img {
-        max-width: 100%;
-    }
+  .tile img {
+    max-width: 100%;
+  }
 
-    .logo {
-        width: 50px;
-        height: 50px;
-    }
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 @media (max-width: 576px) {
-    .grid-container {
-        display: flex;
-        gap: 10px;
-    }
+  .grid-container {
+    display: flex;
+    gap: 10px;
+  }
 
-    .tile {
-        width: 100%;
-        text-align: center;
-    }
+  .tile {
+    width: 100%;
+    text-align: center;
+  }
 
-    .tile img {
-        max-width: 100%;
-    }
+  .tile img {
+    max-width: 100%;
+  }
 
-    .tile i {
-        font-size: 18px;
-        padding: 8px;
-    }
+  .tile i {
+    font-size: 18px;
+    padding: 8px;
+  }
 }
-
-
 
 /* subscribetion section */
 .email-subscribe {
-    background-color: #F5F8FA;
-    padding: 40px;
-    text-align: center;
-    border-radius: 12px;
-    margin: auto;
+  background-color: #f5f8fa;
+  padding: 40px;
+  text-align: center;
+  border-radius: 12px;
+  margin: auto;
 }
 
 .email-subscribe h2 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #4A4A4A;
+  font-size: 24px;
+  font-weight: bold;
+  color: #4a4a4a;
 }
 
 .email-subscribe .highlight {
-    color: #118AC9;
+  color: #118ac9;
 }
 
 .email-subscribe p {
-    font-size: 16px;
-    color: #7A7A7A;
-    margin-bottom: 20px;
+  font-size: 16px;
+  color: #7a7a7a;
+  margin-bottom: 20px;
 }
 
 .subscribe-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .subscribe-form input {
-    padding: 12px;
-    border-radius: 25px;
-    border: 1px solid #ccc;
-    width: 300px;
-    outline: none;
-    text-align: right; 
+  padding: 12px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  width: 300px;
+  outline: none;
+  text-align: right;
 }
 
 .subscribe-form button {
-    background-color: #118AC9;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 25px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
+  background-color: #118ac9;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .subscribe-form button:hover {
-    background-color: #0c6da0;
+  background-color: #0c6da0;
 }
 
 @media (max-width: 600px) {
-    .subscribe-form {
-        flex-direction: column;
-    }
+  .subscribe-form {
+    flex-direction: column;
+  }
 
-    .subscribe-form input {
-        width: 100%;
-    }
+  .subscribe-form input {
+    width: 100%;
+  }
 
-    .subscribe-form button {
-        width: 100%;
-    }
+  .subscribe-form button {
+    width: 100%;
+  }
 }
-
-
 
 /* footer section */
 .footer {
-    background-color: #1E1E2D; /* Dark background */
-    color: #fff;
-    padding: 40px 0;
-    font-family: 'Tajawal', sans-serif;
+  background-color: rgba(38, 45, 55, 1); /* Dark background */
+  color: #fff;
+  padding: 40px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  bottom: -50px; /* تحريك الدائرة لأعلى */
+  right: 0px; /* تحريكها لليسار */
+  width: 200px; /* حجم الدائرة */
+  height: 191.2752312893046px;
+  background: linear-gradient(
+    to right,
+    rgba(68, 210, 168, 1),
+    rgba(68, 210, 168, 0)
+  ); /* تدرج لوني */
+  border-radius: 50%;
+  filter: blur(120px); /* قيمة blur مشابهة للـ 119.55 */
+  opacity: 1;
+  border-color: transparent;
+  z-index: 0; /* خلف المحتوى */
+}
+.footer::after {
+  content: "";
+  position: absolute;
+  top: -50px; /* تحريك الدائرة لأعلى */
+  left: 0px; /* تحريكها لليسار */
+  width: 200px; /* حجم الدائرة */
+  height: 191.2752312893046px;
+  background: linear-gradient(
+    to right,
+    rgba(157, 126, 213, 1),
+    rgba(157, 126, 213, 0)
+  ); /* تدرج لوني */
+  border-radius: 50%;
+  filter: blur(120px); /* قيمة blur مشابهة للـ 119.55 */
+  opacity: 1;
+  border-color: transparent;
+  z-index: 0; /* خلف المحتوى */
 }
 
 .footer img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .footer-links {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .footer-links li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .footer-links a {
-    color: #FFFFFF;
-    text-decoration: none;
-    transition: color 0.3s;
-    font-size: 14px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 14px;
 }
 
 .footer-links a:hover {
-    color: #00AEEF; 
+  color: #00aeef;
 }
 
 .footer-bottom {
-    margin-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding-top: 10px;
-    font-size: 0.9em;
-    color: #B0B0B0;
+  margin-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 10px;
+  font-size: 0.9em;
+  color: #b0b0b0;
 }
 
 .copyRight {
-    color: #8A9CB2;
+  color: #8a9cb2;
 }
-
 
 footer button {
-    background-color: #465060 !important;
-    width: 100%;
-    text-align: start;
+  background-color: #465060 !important;
+  width: 100%;
+  text-align: start;
 }
 
-
 @media (max-width: 992px) {
-    .footer .row {
-        text-align: center;
-    }
+  .footer .row {
+    text-align: center;
+  }
 
-    .footer .col-md-6 {
-        flex-direction: column;
-        align-items: center;
-    }
+  .footer .col-md-6 {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .footer-links {
-        margin-bottom: 20px;
-    }
+  .footer-links {
+    margin-bottom: 20px;
+  }
 
-    .footer .btn {
-        width: 100%;
-        justify-content: center;
-    }
+  .footer .btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
-    .footer .container-fluid {
-        padding: 0 20px;
-    }
+  .footer .container-fluid {
+    padding: 0 20px;
+  }
 
-    .footer .row {
-        flex-direction: column;
-    }
+  .footer .row {
+    flex-direction: column;
+  }
 
-    .footer .col-md-3 {
-        text-align: center;
-        margin-bottom: 20px;
-    }
+  .footer .col-md-3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
-    .footer .col-md-6 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  .footer .col-md-6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .footer-links {
-        text-align: center;
-    }
+  .footer-links {
+    text-align: center;
+  }
 
-    .footer-links a {
-        font-size: 16px;
-    }
+  .footer-links a {
+    font-size: 16px;
+  }
 
-    .footer-links li {
-        margin-bottom: 15px;
-    }
+  .footer-links li {
+    margin-bottom: 15px;
+  }
 
-    .footer-bottom {
-        font-size: 0.8em;
-    }
+  .footer-bottom {
+    font-size: 0.8em;
+  }
 }

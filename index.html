@@ -15,37 +15,38 @@
 </head>
 
 <body>
+    
+    <nav class="navbar navbar-expand-lg ">
+        <div class="test container border  rounded-5 p-3">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.svg" alt="تدبر وتعلم">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#advantage">مميزات التطبيق</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Work">كيف يعمل</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#downloadSection">تحميل التطبيق</a></li>
+                </ul>
+                <a href="#" class="btn btn-support">
+                    دعم المشروع
+                    <img src="images/wallet-minus.svg" class="ps-1" alt="دعم المشروع" height="20">
+                </a>
+            </div>
+        </div>
+    </nav>
     <header>
         <!-- navbar section -->
-        <nav class="navbar navbar-expand-lg">
-            <div class="test container border border-white rounded-5 p-3">
-                <a class="navbar-brand" href="#">
-                    <img src="images/logo.svg" alt="تدبر وتعلم">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item"><a class="nav-link active" href="#home">الرئيسية</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#advantage">مميزات التطبيق</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#Work">كيف يعمل</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#downloadSection">تحميل التطبيق</a></li>
-                    </ul>
-                    <a href="#" class="btn btn-support">
-                        دعم المشروع
-                        <img src="images/wallet-minus.svg" class="ps-1" alt="دعم المشروع" height="20">
-                    </a>
-                </div>
-            </div>
-        </nav>
         <!-- header section -->
-        <div class="header-section" id="home">
+        <section class="header-section" id="home">
             <div class="container d-flex justify-content-between flex-wrap">
                 <div class="d-flex align-items-center justify-content-center w-md-50">
                     <div>
-                        <p class="header-text fw-bold">تَدَبَّــرْ و <span class="highlights">وَتَعَلَّمِ </span> <img
+                        <p class="header-text fw-bold">تَدَبَّــرْ  <span class="highlights">وَتَعَلَّمِ </span> <img
                                 src="images/quran.svg" alt=""> <br>القُـرْآنَ بِطَرِيقَــةٍ <br><span
                                 class="highlights">تَفَاعُلِيَّةٍ</span> وَمُبْتَكَـــرَةٍ</p>
                         <div class="download-buttons">
@@ -71,14 +72,14 @@
                     <img src="images/header.svg" alt="تدبر وتعلم" class="img-fluid">
                 </div>
             </div>
-        </div>
+        </section>
     </header>
 
 
 
 
 
-    <div class="app">
+    <div class="app pb-5">
         <!-- statas section -->
         <div class="container py-5 ">
             <div class="row pb-5 ">
@@ -132,10 +133,10 @@
                 </div>
             </div>
 
-            <div class="app" id="advantage">
+            <section class="app2" id="advantage">
                 <div class="pt-5 awordsApp">
-
-                    <h2 class="mb-4  text-center"> <span class="text-primary">مميزات</span> تطبيق تدبر القرآن</h2>
+                    
+                    <h2 class="mb-4 try  text-center"> <span class="text-primary">مميزات</span> تطبيق تدبر القرآن</h2>
                     <p class="mb-5  text-center subtitle">استمتع بتجربة فريدة تساعدك على فهم وتدبر آيات القرآن الكريم
                     </p>
 
@@ -176,7 +177,7 @@
                             <div class="feature-box cards p-3 highlight  rounded-4  cards p-3">
                                 <div class="d-flex align-items-center">
 
-                                    <i class="fa-solid fa-bell fs-4 me-3 calendar "></i>
+                                    <i class="fa-solid fa-bell fs-4 me-3 bill "></i>
                                     <h5>التنبيهات اليومية</h5>
                                 </div>
                                 <p>استقبل إشعارات تذكيرية بناءاً علي الخطة التدبرية خاصتك والتي تحفزك <br>على إكمال
@@ -225,11 +226,11 @@
 
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
 
         <!-- video section -->
-        <div class="container mt-5 text-center" id="Work">
+        <section class="container mt-5 text-center" id="Work">
             <h3><span class="text-primary">كيف يعمـــل</span> <span>تطبيق تدبر القرآن</span></h3>
             <p class="text-muted subtitle">الفيديو التالي يوضح كيفية استخدام تطبيق تدبر القرآن</p>
 
@@ -238,9 +239,8 @@
                     <iframe src="https://www.youtube.com/embed/eULy-tljA4o" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
-        </div>
-
-
+        </section>
+        
         <!-- reward section  -->
         <div class="reward mt-5 pt-5 app">
             <div class="container rewards-section">
@@ -280,8 +280,9 @@
         </div>
 
 
+
         <!-- slider Section -->
-        <div class="slider-section h-100 mb-5 app">
+        <div class="slider-section  mb-5 ">
             <div class="slider-content">
                 <h2 class="slider-title">أصدقاء</h2>
                 <p class="slider-subtitle subtitle">شركاء النجاح الذين يدعموننا في تحقيق رؤيتنا المشتركة</p>
@@ -289,16 +290,14 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="logo-row d-flex justify-content-center">
-                                <img src="images/logo 0.svg" class="slider-logo" alt="Partner Logo 1">
                                 <img src="images/logo 1.svg" class="slider-logo" alt="Partner Logo 2">
                                 <img src="images/Logo 2.svg" class="slider-logo" alt="Partner Logo 3">
                             </div>
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item ">
                             <div class="logo-row d-flex justify-content-center">
                                 <img src="images/logo3.svg" class="slider-logo" alt="Partner Logo 4">
                                 <img src="images/logo 4.svg" class="slider-logo" alt="Partner Logo 5">
-                                <img src="images/logo 5.svg" class="slider-logo" alt="Partner Logo 6">
                             </div>
                         </div>
                     </div>
@@ -318,7 +317,7 @@
         </div>
 
         <!-- download Section  -->
-        <div id="downloadSection"
+        <section id="downloadSection"
             class="container  downloadSection mt-5 mb-5 d-flex align-items-center justify-content-around overflow-hidden text-white border rounded-4">
 
             <div class="text-start ">
@@ -351,7 +350,7 @@
                 <img src="images/iPhone 15.svg" class="position-relative foreground-img w-100"
                     alt="iPhone 15 with application">
             </div>
-        </div>
+        </section>
 
 
 
@@ -397,7 +396,7 @@
 
 
         <!-- email-subscribe Section -->
-        <div class=" container email-subscribe mb-5">
+        <div class=" container email-subscribe">
             <h2>اشترك في <span class="highlight">القائمة البريدية</span></h2>
             <p>انضم إلى قائمتنا البريدية للحصول على آخر التحديثات.<br> يمكنك إلغاء الاشتراك في أي لحظة.</p>
 
@@ -411,7 +410,7 @@
 
     <!-- ?  footer section -->
     <footer class="footer ">
-        <div class="container-fluid mt-5">
+        <div class="container-fluid ">
             <div class="row">
                 <div class="col-md-3">
                     <div class="ps-3">
@@ -433,10 +432,10 @@
                     <div class="footer-links">
                         <p class="fw-bold">مواقعنا</p>
                         <ul class="list-unstyled">
-                            <li><a href="">موسوعة الأحاديث النبوية</a></li>
-                            <li><a href="">موسوعة المصطلحات الإسلامية</a></li>
-                            <li><a href="">موسوعة القرن الكريم</a></li>
-                            <li><a href="">مالا يسمع اطفال المسلمين جهله</a></li>
+                            <li><a href="https://hadeethenc.com/ar/home" target="_blank">موسوعة الأحاديث النبوية</a></li>
+                            <li><a href="https://terminologyenc.com/ar/home"  target="_blank">موسوعة المصطلحات الإسلامية</a></li>
+                            <li><a href="https://quranenc.com/ar/"  target="_blank">موسوعة القرن الكريم</a></li>
+                            <li><a href="https://kids.islamenc.com/ar/home"  target="_blank">مالا يسمع اطفال المسلمين جهله</a></li>
                         </ul>
                     </div>
                     <div class="footer-links">
@@ -453,12 +452,12 @@
                         <div>
                             <button type="button" class="btn btn-dark d-flex px-4 mb-3 pb-1 align-items-center">
                                 <i class="fa-brands fs-2 me-3 fa-apple"></i>
-                                <p class="m-0 text-start"> تنزيل من <br> <span class="fs-5 fw-bold"> App Store</span>
+                                <p class="m-0 text-start"> تنزيل من <br> <span class="fs-6 fw-bold"> App Store</span>
                                 </p>
                             </button>
                             <button type="button" class="btn btn-dark d-flex px-4 pb-1 align-items-center">
                                 <i class="fa-brands fs-2 me-3 fa-google-play"></i>
-                                <p class="m-0 text-start"> تنزيل من <br> <span class="fs-5 fw-bold"> Google Play</span>
+                                <p class="m-0 text-start"> تنزيل من <br> <span class="fs-6 fw-bold"> Google Play</span>
                                 </p>
                             </button>
                         </div>
@@ -471,6 +470,45 @@
         </div>
     </footer>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+               window.addEventListener("scroll", function () {
+                    let navbar = document.querySelector(".navbar");
+                    if (window.scrollY > 50) {
+                        navbar.style.boxShadow = "0px 4px 10px rgba(0, 0, 0, 0.1)";
+                    } else {
+                        navbar.style.boxShadow = "none";
+                    }
+                });
+
+                document.addEventListener("scroll", function () {
+                    let sections = document.querySelectorAll("section");
+                    let navLinks = document.querySelectorAll(".nav-link");
+                    let lastSection = sections[sections.length - 1];
+                    let lastLink = navLinks[navLinks.length - 1];
+                    let bottomOfLastSection = lastSection.offsetTop + lastSection.offsetHeight;
+                    let scrollY = window.scrollY + window.innerHeight;
+
+                    if (scrollY >= bottomOfLastSection) {
+                        navLinks.forEach(link => link.classList.remove("highlight"));
+                        lastLink.classList.add("highlight");
+                    } else {
+                        sections.forEach(section => {
+                            let top = section.offsetTop - 100;
+                            let bottom = top + section.offsetHeight;
+                            let id = section.getAttribute("id");
+
+                            if (window.scrollY >= top && window.scrollY < bottom) {
+                                navLinks.forEach(link => {
+                                    link.classList.remove("highlight");
+                                    if (link.getAttribute("href") === `#${id}`) {
+                                        link.classList.add("highlight");
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
+    </script>
 </body>
 
 </html>
