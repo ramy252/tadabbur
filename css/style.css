@@ -212,11 +212,9 @@ header {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
-.stats i {
+.stats img {
   transition: all 0.3s ease;
-  font-size: 1.5rem;
-  color: #666;
-  padding: 15px;
+  padding: 0.625rem;
 }
 .stats .user {
   background-color: #3a7dc4;
@@ -249,9 +247,10 @@ header {
     rgba(248, 249, 250, 0.604)
   );
   overflow-x: hidden;
+  position: relative;
 }
 
-.stats:hover i {
+.stats:hover img {
   color: #008bdc;
   transform: scale(1.2);
 }
@@ -270,7 +269,11 @@ header {
 }
 
 /* advantage section */
-
+.app .bgApp {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 .awordsApp .cup {
   color: #44d2a8;
   border: 3px solid transparent;
@@ -489,6 +492,27 @@ header {
   max-height: 100vh;
 }
 
+.carousel {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.carousel-item img {
+  height: 60px;
+  object-fit: contain;
+  padding: 0 15px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.low-opacity {
+  opacity: 0.1; /* الصورة الشفافة (بهتانة) */
+}
+
+.high-opacity {
+  opacity: 1; /* الصور الواضحة */
+}
+
 .slider-content {
   width: 100%;
   margin: 0 auto;
@@ -516,36 +540,6 @@ header {
   gap: 20px;
 }
 
-.slider-logo {
-  max-width: 150px;
-  margin: 10px;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
-
-.slider-logo:hover {
-  opacity: 1;
-}
-
-.carousel {
-  margin: 0 auto;
-  max-width: 1200px;
-}
-
-.carousel-item {
-  padding: 10px 0;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-  width: 5%;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: #2c5282;
-  border-radius: 50%;
-}
 
 @media (max-width: 768px) {
   .footer-title {
