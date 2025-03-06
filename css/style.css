@@ -540,7 +540,6 @@ header {
   gap: 20px;
 }
 
-
 @media (max-width: 768px) {
   .footer-title {
     font-size: 1.5em;
@@ -670,10 +669,6 @@ header {
   color: #8a9cb2;
 }
 
-.tile img {
-  width: 100%;
-}
-
 .tile {
   display: flex;
   align-items: center;
@@ -681,7 +676,9 @@ header {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.5s;
+  transition: all 0.3s;
+  min-height: 80px;
+  gap: 10px;
 }
 
 .tile:hover {
@@ -689,110 +686,91 @@ header {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* ضبط الخلفيات */
 .quran {
   background-color: #e6f2ff;
 }
-
 .hadith {
   background-color: #e6ffe6;
 }
-
 .terminology {
   background-color: #fff5e6;
 }
-
 .kids {
   background-color: #f2e6ff;
 }
 
-/* Arrow icon colors */
-.hadith i {
-  background-color: #9db4691c !important;
-  color: #9cb469 !important;
-  border-color: transparent !important;
+/* ضبط الأيقونات */
+.tile i {
+  padding: 10px;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
 }
 
+/* تخصيص ألوان الأيقونات لكل قسم */
 .quran i {
   background-color: #2680eb14 !important;
   color: #118ac9 !important;
-  border-color: transparent !important;
 }
-
+.hadith i {
+  background-color: #9db4691c !important;
+  color: #9cb469 !important;
+}
 .kids i {
   background-color: #2d30921c !important;
   color: #2d3092 !important;
-  border-color: transparent !important;
 }
-
 .terminology i {
   background-color: #daa36030 !important;
   color: #daa360 !important;
-  border-color: transparent !important;
 }
 
+/* حجم الشعار */
 .logo {
-  width: 100px;
-  height: 60px;
+  width: 360px !important;
+  height: 6rem;
 }
 
+/* تحسين التناسق في الشاشات الصغيرة */
 @media (max-width: 992px) {
-  .tile {
-    text-align: center;
-    padding: 15px;
-  }
-
-  .tile img {
-    margin-bottom: 10px;
-    max-width: 80%;
-  }
-
-  .tile i {
-    margin-top: 10px;
-    padding: 15px;
+  .logo {
+    width: 75% !important;
   }
 }
-
 @media (max-width: 768px) {
   .main-title {
     font-size: 2em;
   }
-
   .subtitle {
     font-size: 1em;
   }
-
   .tile {
     padding: 12px;
   }
-
-  .tile img {
-    max-width: 100%;
-  }
-
   .logo {
-    width: 50px;
-    height: 50px;
+    width: 60% !important;
+  }
+  .tile i {
+    font-size: 16px;
+    padding: 8px;
   }
 }
 
 @media (max-width: 576px) {
-  .grid-container {
-    display: flex;
-    gap: 10px;
-  }
-
   .tile {
-    width: 100%;
+    flex-direction: row;
     text-align: center;
   }
-
   .tile img {
-    max-width: 100%;
+    max-width: 200% !important;
   }
-
+  .tile .logo {
+    width: 75% !important;
+  }
   .tile i {
-    font-size: 18px;
-    padding: 8px;
+    font-size: 14px;
+    padding: 6px;
   }
 }
 
