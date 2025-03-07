@@ -3,7 +3,9 @@ body {
   text-align: right;
   padding: 0;
   margin: 0;
-  font-family: "SomarRounded", sans-serif;
+  font-family: "SomarRounded", sans-serif;  
+  width: 100%;
+  overflow-x: hidden;
 }
 
 @font-face {
@@ -41,11 +43,11 @@ body {
 }
 
 .nav-link.active {
-  color: #007bff;
+  color: rgba(17, 138, 201, 1);
 }
 
 .btn-support {
-  background-color: #008bdc;
+  background-color: rgba(17, 138, 201, 1);
   color: white;
   border-radius: 25px;
   padding: 10px 20px;
@@ -71,17 +73,29 @@ body {
   backdrop-filter: blur(5px); /* تأثير الضبابية */
   -webkit-backdrop-filter: blur(5px); /* دعم لمتصفح Safari */
   background-color: rgba(38, 128, 235, 0.08); /* لون شفاف للخلفية */
-  border-radius: 100px;
   position: fixed;
   top: 15px;
   left: 0;
-  width: 100%;
+  border-radius: 100px;
+  box-sizing: border-box;
   right: 0;
   z-index: 1000;
   border-color: transparent !important;
   transition: all 0.3s ease-in-out;
 }
-
+@media (max-width: 533px) {
+  .test {
+    width: 80%;
+    padding-inline: 10px !important;
+    box-sizing: border-box;
+     border-radius: 30px;
+     padding-inline: 0;
+  }
+  .navbar-brand
+  {
+    width: 50%;
+  }
+}
 /* header section */
 
 .header-section::before {
@@ -147,7 +161,7 @@ body {
 .header-section {
   text-align: center;
   /* background: linear-gradient(to right, transparent, transparent, #d1fae5); */
-  padding-top: 100px; /* لتجنب تغطية الشريط العلوي للمحتوى */
+  padding-top: 150px; /* لتجنب تغطية الشريط العلوي للمحتوى */
   position: relative;
 }
 
@@ -236,8 +250,7 @@ body {
 
 @media (max-width: 576px) {
   .header-text {
-    font-size: 1.5rem;
-    text-align: center;
+    font-size: 2rem !important;
   }
 
   .header-section p img {
@@ -387,6 +400,7 @@ body {
   border-radius: 30%;
   padding: 10px;
 }
+
 .feature-box p {
   color: #8a9cb2;
   font-family: "Somar", sans-serif;
@@ -396,7 +410,7 @@ body {
 }
 .awordsApp .cards {
   background-color: rgba(255, 255, 255, 1);
-  border: 1px transparent;
+  border: 1px  rgba(241, 245, 247, 1)   solid;
   border-radius: 22px;
 }
 .subtitleAvg {
@@ -465,11 +479,17 @@ body {
   border-color: transparent;
   z-index: 0; /* خلف المحتوى */
 }
+.image-container
+{
+    height: 420px;
+    
 
+}
 .image-container,
 .text-container {
   flex: 1;
   min-width: 0;
+  width: 40%;
   color: white;
   border-radius: 15px;
   height: 400px;
@@ -481,7 +501,8 @@ body {
 
 .text-container {
   background: #0077b6;
-  margin-top: 60px;
+  margin-top: 65px;  
+  height:390px;
 }
 
 .image-container img {
@@ -717,8 +738,8 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  border: 1px solid rgba(241, 245, 247, 1) ;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s;
   min-height: 80px;
   gap: 10px;
@@ -726,29 +747,29 @@ body {
 
 .tile:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+ 
 }
 
 /* ضبط الخلفيات */
 .quran {
-  background-color: #e6f2ff;
+  background-color: rgba(38, 128, 235, 0.08);
 }
 .hadith {
-  background-color: #e6ffe6;
+  background-color: rgba(157, 180, 105, 0.1);
 }
 .terminology {
-  background-color: #fff5e6;
+  background-color: rgba(218, 163, 96, 0.1);
 }
 .kids {
-  background-color: #f2e6ff;
+  background-color:rgba(45, 48, 146, 0.08);
 }
 
 /* ضبط الأيقونات */
 .tile i {
-  padding: 10px;
+  padding: 11.2px;
   font-size: 18px;
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 50%;
+
+  border-radius:20px;
 }
 
 /* تخصيص ألوان الأيقونات لكل قسم */
@@ -820,7 +841,7 @@ body {
 /* subscribetion section */
 .email-subscribe {
   background-color: rgba(54, 63, 77, 0.06);
-  padding: 100px;
+  padding: 100px 0px !important;
   text-align: center;
   border-radius: 16px;
   margin: auto;
