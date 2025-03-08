@@ -26,7 +26,7 @@ body {
 }
 
 .navbar-brand img {
-    height: 40px;
+    height:65px;
     animation: logoFadeIn 1s ease-in-out forwards; /* تأثير على الشعار */
 }
 
